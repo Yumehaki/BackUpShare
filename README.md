@@ -10,15 +10,14 @@ BUS (BackUpShare) is a system that can perform backup in a safe state where P2P,
 -2: Your disk will be compressed to some extent by the data of others.
 -3: If the password is leaked, users and non-users all over the world can access your data.
 -4: If you lose the path file (described below), your data will not be returned. We will deal with this later.
-
  0: This software has no warranty.
 
 ~ Technical structure of BUS ~
 First you specify the files to back up.
 The specified file is first wrapped in a number of ZIP files.
-Encrypt this ZIP file. RSA → AES → (ZIP) → AES → RSA. The password in this case is defined by the path file.
+Encrypt this ZIP file. For example, RSA → AES → (ZIP) → AES → RSA. The password in this case is defined by the path file.
 In addition, it will multiply ZIP the encrypted files.
-Finally, use "7z", which has a high compression rate. The file is now sent to n people.
+Finally, use a method with a high compression ratio. The file is now sent to n people.
 
 In addition, the path file has a '2nd password' applied and is lightweight. For this reason, it can be operated without problems even on cloud servers of large companies.
 It is recommended to use non-ASCII characters of 16bit or more for the 2nd password. It is also 2FACTA certified (mandatory).
@@ -31,4 +30,3 @@ It is also effective for users who are not interested in privacy issues. Because
 Uploading the pass file to SNS is one way. But it's a good idea to put some kind of sturdy code on your own.
 
 BUS is open source. The usage fee is a small amount of your disc.
-(Translate by Google Translation)
